@@ -7,8 +7,8 @@ class Scene
 public:
 	Scene();
 	~Scene();
-	void addGameObject(GameObject& gameObject);
-	void removeGameObject(GameObject& gameObject);
+	void AddGameObject(GameObject& gameObject);
+	void RemoveGameObject(GameObject& gameObject);
 	void Update();
 protected:
 	std::set<GameObject> gameObjects;

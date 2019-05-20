@@ -11,12 +11,12 @@ Scene::~Scene()
 {
 }
 
-void Scene::addGameObject(GameObject& gameObject)
+void Scene::AddGameObject(GameObject& gameObject)
 {
 	gameObjects.insert(gameObject);
 }
 
-void Scene::removeGameObject(GameObject& gameObject)
+void Scene::RemoveGameObject(GameObject& gameObject)
 {
 	gameObjects.erase(gameObject);
 }

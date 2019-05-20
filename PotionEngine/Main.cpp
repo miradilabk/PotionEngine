@@ -24,10 +24,10 @@ int main() {
 	block.AddComponent(&blockRenderer);
 	block.AddComponent(&r2);
 
-	scene.addGameObject(background);
-	scene.addGameObject(gameObject);
-	scene.addGameObject(block);
-
+	scene.AddGameObject(background);
+	scene.AddGameObject(gameObject);
+	scene.AddGameObject(block);
+	
 	game.AddScene(scene);
 	game.currentSceneIndex = 0;
 

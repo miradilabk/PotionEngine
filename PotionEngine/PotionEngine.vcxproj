@@ -22,6 +22,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="glad.h" />
     <ClInclude Include="OpenglRenderer.h" />
     <ClInclude Include="OpenglWindow.h" />
     <ClInclude Include="ResourceManager.h" />
