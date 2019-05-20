@@ -2,7 +2,7 @@
 
 a simple GameObject-Component based 2d game engine based on OpenGL.
 
-opengl3.2 and [GLFW ]([https://github.com/glfw/glfw])(https://github.com/glfw/glfw)needed to run this project. 
+opengl3.2 and [GLFW]([https://github.com/glfw/glfw])needed to run this project. 
 
 ## useage
 
