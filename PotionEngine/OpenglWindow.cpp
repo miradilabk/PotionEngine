@@ -1,5 +1,6 @@
 #include "OpenglWindow.h"
 #include <iostream>
+#include "Input.h"
 using namespace std;
 
 float OpenglWindow::deltaTime = 0;
@@ -41,6 +42,8 @@ GLFWwindow * OpenglWindow::Init(int width, int height)
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_CULL_FACE);
+
+	Input::Init(window);
 
 	return window;
 }

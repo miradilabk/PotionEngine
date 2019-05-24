@@ -15,32 +15,16 @@ GameObject::GameObject(Transform2D transform, int layer) : transform(transform),
 
 GameObject::~GameObject()
 {
+	puts("destruct gameobject");
+	for (auto component : components)
+		delete component;
+	components.clear();
 }
 
 void GameObject::Update()
 {
 	for (auto component : components)
-		component->Update();
-}
-
-void GameObject::AddComponent(Component* component)
-{
-	if (component->transform != NULL) {
-		puts("this component already has a gameobject attached.");
-		return;
-	}
-	component->transform = &transform;
-	component->Start();
-	components.insert(component);
-}
-
-bool GameObject::operator<(const GameObject & gameObject)const
-{
-	return this->id < gameObject.id;
-}
-
-void GameObject::RemoveComponent(Component* component) 
-{
-	components.erase(component);
-	component->transform = NULL;
+		if (component->isEnabled) {
+			component->Update();
+		}
 }

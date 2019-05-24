@@ -2,14 +2,20 @@
 #include <vector>
 #include <set>
 #include "GameObject.h"
+
 class Scene
 {
 public:
 	Scene();
-	~Scene();
-	void AddGameObject(GameObject& gameObject);
-	void RemoveGameObject(GameObject& gameObject);
+	virtual ~Scene();
+	void AddGameObject(GameObject *gameObject);
+	void RemoveGameObject(GameObject *gameObject);
 	void Update();
 protected:
-	std::set<GameObject> gameObjects;
+	struct cmp {
+		bool operator()(GameObject *a, GameObject *b)const {
+			return a->id < b->id;
+		}
+	};
+	std::set<GameObject*, cmp> gameObjects;
 };

@@ -11,7 +11,8 @@ public:
 		Texture2D &texture,
 		Shader &shader,
 		Transform2D *transform,
-		glm::vec3 color = glm::vec3(1.0f));
+		glm::vec3 color,
+		glm::vec2 origin);
 private:
 	static GLuint quadVAO;
 	static bool hasInited;

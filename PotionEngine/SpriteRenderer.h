@@ -9,11 +9,16 @@ class SpriteRenderer : public Component
 public:
 	Texture2D texture;
 	const char* textureFilePath;
-	SpriteRenderer(const char* filePath);
-	SpriteRenderer(const char * filePath, Shader & shader);
-	~SpriteRenderer();
-	void Update();
-	void Start();
+	void Init(
+		const char* textureFilePath,
+		glm::vec2 origin = glm::vec2(0),
+		glm::vec3 color = glm::vec3(1),
+		Shader& shader = Shader::GetDefaultShader()
+	);
+	virtual void Update();
+	virtual void Start();
 private:
-	Shader& shader;
+	Shader& shader = Shader::GetDefaultShader();
+	glm::vec3 color;
+	glm::vec2 origin;
 };

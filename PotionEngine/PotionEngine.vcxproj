@@ -19,12 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BreakOutScene.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="glad.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="OpenglRenderer.h" />
     <ClInclude Include="OpenglWindow.h" />
+    <ClInclude Include="PaddleController.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Rotator.h" />
     <ClInclude Include="Scene.h" />
@@ -35,13 +38,16 @@
     <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BreakOutScene.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OpenglRenderer.cpp" />
     <ClCompile Include="OpenglWindow.cpp" />
+    <ClCompile Include="PaddleController.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Rotator.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -123,6 +129,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>

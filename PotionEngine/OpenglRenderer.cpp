@@ -38,7 +38,8 @@ void OpenglRenderer::initRenderData()
 
 void OpenglRenderer::DrawSprite(
 	Texture2D &texture, Shader &shader, 
-	Transform2D *transform, glm::vec3 color)
+	Transform2D *transform, glm::vec3 color,
+	glm::vec2 origin)
 {
 	initRenderData();
 	// Prepare transformations
@@ -50,10 +51,8 @@ void OpenglRenderer::DrawSprite(
 	shader.SetMatrix4("projection", projection);
 	glm::mat4 model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(transform->position, 0.0f));
-
-	model = glm::translate(model, glm::vec3(0.5f * transform->size.x, 0.5f * transform->size.y, 0.0f));
 	model = glm::rotate(model, glm::radians(transform->rotation), glm::vec3(0.0f, 0.0f, 1.0f));
-	model = glm::translate(model, glm::vec3(-0.5f * transform->size.x, -0.5f * transform->size.y, 0.0f));
+	model = glm::translate(model, glm::vec3(-origin.x, -origin.y, 0.0f));
 
 	model = glm::scale(model, glm::vec3(transform->size, 1.0f));
 

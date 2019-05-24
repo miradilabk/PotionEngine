@@ -10,8 +10,7 @@ public:
 	bool isEnabled;
 	virtual void Update() = 0;
 	virtual void Start() = 0;
-	bool operator<(const Component& component)const;
+	int id;
 private:
 	static int totalCnt;
-	int id;
 };

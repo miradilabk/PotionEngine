@@ -8,7 +8,7 @@ GameWindow::GameWindow(int width, int height) : currentSceneIndex(-1)
 	Init(width, height);
 }
 
-GameWindow::GameWindow(int width, int height, Scene& scene) : currentSceneIndex(-1)
+GameWindow::GameWindow(int width, int height, Scene *scene) : currentSceneIndex(-1)
 {
 	GameWindow::width = width;
 	GameWindow::height = height;
@@ -17,18 +17,20 @@ GameWindow::GameWindow(int width, int height, Scene& scene) : currentSceneIndex(
 	currentSceneIndex = 0;
 }
 
-
 GameWindow::~GameWindow()
 {
+	for (auto scene : scenes) {
+		delete scene;
+	}
 }
 
 void GameWindow::Update()
 {
 	if (!scenes.empty() && currentSceneIndex != -1)
-		scenes[currentSceneIndex].Update();
+		scenes[currentSceneIndex]->Update();
 }
 
-void GameWindow::AddScene(Scene &scene)
+void GameWindow::AddScene(Scene *scene)
 {
 	scenes.push_back(scene);
 }
