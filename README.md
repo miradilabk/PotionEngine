@@ -63,15 +63,11 @@ void Rotator::Update()
 
 ## TODO
 
-- [ ] add collision component
+- [ ] physics
 
-- [ ] gravity
+- [ ] UI
 
-- [ ] trigger
-
-- [ ] UI layer
-
-- [ ] audio management
+- [ ] audio
 
 - [x] input handling
 
